@@ -1,0 +1,22 @@
+<%- include('partials/header') -%>
+
+<body>
+  <div class="container content">
+    <h1>Home</h1>
+    <p><%= homeContent %></p>
+    <% postList.forEach((post) => { %>
+    <h2><%= post.title %></h2>
+    <p>
+      <%= post.content.substring(0, 100) + "..." %>
+      <a
+        href="/posts/<%= post.title %>"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Read More</a
+      >
+    </p>
+    <% }) %>
+  </div>
+</body>
+
+<%- include('partials/footer') -%>
